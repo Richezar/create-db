@@ -47,6 +47,8 @@ values ('drake1', 256, 1);
 insert into songs (name, duration, album_id)
 values('drake2', 205, 1);
 insert into songs (name, duration, album_id)
+values('drake3', 256, 1);
+insert into songs (name, duration, album_id)
 values('thebeatles1', 200, 2);
 insert into songs (name, duration, album_id)
 values('thebeatles2', 127, 2);

@@ -1,12 +1,12 @@
-select name, max(duration) from songs
-group by name
-limit 1;
+select name, duration from songs
+where duration = (select max(duration) from songs)
+group by name, duration 
 
 select name, duration from songs
 where duration >= 210;
 
 select name, year from collections
-where 2018 <= year and year <= 2020;
+where year between 2018 and 2020;
 
 select name_artist from artists
 where (length(name_artist) - length(replace(name_artist, ' ', ''))) = 0;
@@ -34,3 +34,4 @@ WHERE a.name_artist NOT IN (SELECT DISTINCT a.name_artist FROM artists a
 
 select c.name from collections c , collection c2 , songs s , albums a , artist_album aa , artists a2 
 where c.id = c2.id and c2.id = s.id and s.id = a.id and a.id = aa.id and aa.id = a2.id and a2.name_artist = 'Eminem';
+
